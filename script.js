@@ -1,8 +1,10 @@
 
 
-  document.getElementById("demo").onclick = function() {gerar()};
+  
 
+  document.getElementById("demo").onclick = 
   function gerar() {
+    
       
     let count = {
       2: 0,
@@ -31,6 +33,8 @@
   let sum12 = 0
   
   arr = []
+
+    
   
   for (let i = 0; i < 1000; i++){
       
@@ -87,14 +91,23 @@
       arr.push(somaDados) 
       
     }
-    let exibe = JSON.stringify(count);
+    
+    let res = " ";
 
-    
-    
-    
+    for (let [key, value] of Object.entries(count)){
+        res += (" Número " + key + ': ' + value + ' vezes' + ';  ');
+
+    };
+
     const resposta = document.getElementById('d1');
-    let newElement = document.createElement("p");
-    newElement.innerText = exibe;
+        let newElement = document.createElement("p");
+        newElement.innerText = res;
+        
+   
+  
+        
+  
+    
 
    
     for(let i = 2; i <= 11; i++){
@@ -105,14 +118,20 @@
         novo.style.height = "20px";
         novo.style.width = `${larg}px`;        
         let imprime = document.getElementById("d2");
-        imprime.appendChild(novo);        
+        imprime.appendChild(novo); 
+
+        
+           
     }  
 
-    return resposta.appendChild(newElement); 
+     
+   
+
+    resposta.appendChild(newElement); 
+    
+
 
 }
-
-
 
 
 
